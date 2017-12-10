@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="fact-checking" />
+        <module name="SNLP-MinProj" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="fact-checking" target="1.5" />
+      <module name="SNLP-MinProj" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
