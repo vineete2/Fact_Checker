@@ -1,4 +1,4 @@
-# Fact_Checker
+# Fact_Checker  [![Build Status](https://travis-ci.org/SmartBV2/Fact_Checker.svg?branch=master)](https://travis-ci.org/SmartBV2/Fact_Checker)
 A repository for the SNLP course's mini-project - CS Uni Paderborn 
 
 ## Project Board: 
