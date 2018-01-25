@@ -1,4 +1,4 @@
-package de.upb.cs.snlp.factchecking;
+package com.github.smartbv2.fact_checker;
 
 
 import org.aksw.fox.binding.java.FoxApi;

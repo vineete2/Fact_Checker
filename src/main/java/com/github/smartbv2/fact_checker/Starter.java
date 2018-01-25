@@ -1,4 +1,4 @@
-package de.upb.cs.snlp.factchecking;
+package com.github.smartbv2.fact_checker;
 
 import edu.stanford.nlp.ie.AbstractSequenceClassifier;
 import edu.stanford.nlp.ie.crf.CRFClassifier;

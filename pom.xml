@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.upb.cs.snlp</groupId>
-    <artifactId>fact-checking</artifactId>
+    <groupId>com.github.smartbv2</groupId>
+    <artifactId>fact-checker</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
