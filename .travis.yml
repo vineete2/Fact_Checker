@@ -1,8 +1,12 @@
 language: java
-jdk: - oraclejdk9
+
+jdk:
+  - oraclejdk8
  
 install: true
-script: mvn clean verify
+
+script:
+  - mvn clean verify
  
 cache:
   directories:
