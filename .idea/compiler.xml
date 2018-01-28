@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="fact-checking" target="1.5" />
+      <module name="fact-checking" target="1.7" />
       <module name="SNLP-MinProj" target="1.5" />
     </bytecodeTargetLevel>
   </component>
