@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * @author Varma G.S.
  * Sample Named Entity Extraction Program
  */
 public class Starter {

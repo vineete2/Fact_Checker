@@ -8,6 +8,9 @@ import org.aksw.fox.binding.java.IFoxApi;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * @author Varma G.S.
+ */
 public class FoxExample {
 
     //public final static Logger LOG = LogManager.getLogger(FoxExample.class);
