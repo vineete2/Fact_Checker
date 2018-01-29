@@ -3,8 +3,6 @@ package com.github.smartbv2.fact_checker;
 
 import org.neo4j.jdbc.Connection;
 import org.neo4j.jdbc.PreparedStatement;
-import org.neo4j.jdbc.ResultSet;
-import org.neo4j.jdbc.ResultSetMetaData;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -22,7 +20,7 @@ public class ConnectNeo {
         try (Connection con = (Connection) DriverManager.getConnection(url, "neo4j", "varma")) {
 
             // Create a PreparedStatement and submit a Cypher query:
-            // String query = "MATCH (tom {name: {1}}) RETURN tom"; // Movie database
+
 
             //Refresh database
             String queryDelete = "MATCH (n)" +
@@ -31,36 +29,16 @@ public class ConnectNeo {
                 stmtDelete.executeQuery();
             }
 
-            String query = "CREATE (baeldung:Company {name:\"Baeldung\"}) "
-                    + "-[:owns]-> (tesla:Car {make: {1}, model: {2}})"
-                    + "RETURN baeldung, tesla";
-
-//            try (PreparedStatement stmt = con.prepareStatement(query)) {
-//                stmt.setString(1, "Tom Hanks");
-//
-//                // Iterate and print out the result set
-//                try (org.neo4j.jdbc.ResultSet rs = (org.neo4j.jdbc.ResultSet) stmt.executeQuery()) {
-//                    while (rs.next()) System.out.println(
-//                             "Person: " + rs.getString("name") + " born in " + rs.getInt("born"));
-//                           // rs.toString());
-
-            try (PreparedStatement stmt = (PreparedStatement) con.prepareStatement(query)) {
-                stmt.setString(1, "tesla");
-                stmt.setString(2, "Model1X");
-
-                ResultSet rs = (ResultSet) stmt.executeQuery();
-                ResultSetMetaData rsmd = rs.getMetaData();
-                int columnsNumber = rsmd.getColumnCount();
-                // Read data from result set
-                while (rs.next()) {
-                    for (int i = 1; i <= columnsNumber; i++) {
-                        if (i > 1) System.out.print(",  ");
-                        String columnValue = rs.getString(i);
-                        System.out.print(columnValue + " " + rsmd.getColumnName(i));
-                    }
-                }
-
+            String queryInsert = "WITH split(tolower(\"Nobel Peace Prize is Henry Dunant honour.\"),\" \") AS text" +
+                    " UNWIND range(0,size(text)-2) AS i" +
+                    " MERGE (w1:Word {name: text[i]})" +
+                    " MERGE (w2:Word {name: text[i+1]})" +
+                    " MERGE (w1)-[:NEXT]->(w2)";
+            try (PreparedStatement stmtInsert = (PreparedStatement) con.prepareStatement(queryInsert)) {
+                stmtInsert.executeQuery();
             }
+
         }
     }
+
 }
