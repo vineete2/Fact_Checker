@@ -23,6 +23,14 @@ public class ConnectNeo {
 
             // Create a PreparedStatement and submit a Cypher query:
             // String query = "MATCH (tom {name: {1}}) RETURN tom"; // Movie database
+
+            //Refresh database
+            String queryDelete = "MATCH (n)" +
+                    "DETACH DELETE n";
+            try (PreparedStatement stmtDelete = (PreparedStatement) con.prepareStatement(queryDelete)) {
+                stmtDelete.executeQuery();
+            }
+
             String query = "CREATE (baeldung:Company {name:\"Baeldung\"}) "
                     + "-[:owns]-> (tesla:Car {make: {1}, model: {2}})"
                     + "RETURN baeldung, tesla";
