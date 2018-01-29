@@ -29,7 +29,9 @@ public class ConnectNeo {
                 stmtDelete.executeQuery();
             }
 
-            String queryInsert = "WITH split(tolower(\"Nobel Peace Prize is Henry Dunant honour.\"),\" \") AS text" +
+            String statement = "Nobel Peace Prize is Henry Dunant honour.";
+            String queryInsert = "WITH split(tolower(\"" + statement +
+                    "\"),\" \") AS text" +
                     " UNWIND range(0,size(text)-2) AS i" +
                     " MERGE (w1:Word {name: text[i]})" +
                     " MERGE (w2:Word {name: text[i+1]})" +
