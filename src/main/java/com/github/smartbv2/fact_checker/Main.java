@@ -12,10 +12,15 @@ public class Main {
         ConnectFOX connectFOX = new ConnectFOX();
         connectFOX.getPerson(statement);
 
+        // Retrieve name from FOX Json
+        JSOName jsoName = new JSOName();
+        String trigger = jsoName.getName();
 
         // DBpedia
-        String trigger = "Britney_Spears"; // Query for DBpedia
+        // String trigger = "Britney_Spears"; // Query for DBpedia
         ConnectDBpedia connectDBpedia = new ConnectDBpedia();
         connectDBpedia.getJSON(trigger);
+
+
     }
 }

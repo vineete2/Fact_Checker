@@ -2,9 +2,9 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : [ "foxo:NamedEntityRecognition", "prov:Activity" ],
-    "endedAtTime" : "2018-01-30T03:44:00.179+01:00",
+    "endedAtTime" : "2018-01-30T07:33:30.845+01:00",
     "generated" : [ "http://ns.aksw.org/fox/demo/document-1#char0,14", "http://ns.aksw.org/fox/demo/document-1#char18,33" ],
-    "startedAtTime" : "2018-01-30T03:43:59.881+01:00",
+    "startedAtTime" : "2018-01-30T07:33:30.514+01:00",
     "used" : "foxr:org.aksw.fox.Fox"
   }, {
     "@id" : "http://ns.aksw.org/fox/demo/document-1#char0,14",
