@@ -20,7 +20,7 @@ public class JSOName {
 
         JSONParser parser = new JSONParser();
 
-        JSONObject obj = (JSONObject) parser.parse(new FileReader("output_fox.json"));
+        JSONObject obj = (JSONObject) parser.parse(new FileReader("data/outputs/output_fox.json"));
 
         // typecasting obj to JSONObject
         JSONArray graph = (JSONArray) obj.get("@graph");

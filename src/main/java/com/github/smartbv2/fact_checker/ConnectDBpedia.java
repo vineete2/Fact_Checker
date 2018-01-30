@@ -18,7 +18,7 @@ public class ConnectDBpedia {
                         urlConnection.getInputStream()));
         String inputLine;
 
-        BufferedWriter out = new BufferedWriter(new FileWriter("output_dbpedia.txt"));
+        BufferedWriter out = new BufferedWriter(new FileWriter("data/outputs/output_dbpedia.txt"));
 
         while ((inputLine = in.readLine()) != null){
             out.write(inputLine);
