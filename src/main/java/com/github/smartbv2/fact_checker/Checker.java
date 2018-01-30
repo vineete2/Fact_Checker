@@ -6,8 +6,10 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 
 
 public class Checker {
@@ -97,32 +99,31 @@ public class Checker {
 
         // Tokenize str ( statement )
         String[] words = str.split(" ");
-        List<String> wordList = Arrays.asList(words);
+
+        ArrayList wordList =new ArrayList(Arrays.asList(words));
+       // List<String> wordList = Arrays.asList(words);
         String[] stopWords = findStopWords();
         for (String word : words) {
             for (String stopWord : stopWords) {
 
                 if (word.equals(stopWord)) {
-
                     wordList.remove(word);
                 }
             }
         }
-        return String.join(", ", wordList);
 
 
-//        after = str.replaceAll("'s", "");
-//        after = after.replaceAll("_", " ");
-//        after = after.replaceAll(" is", "");
-//        for (int i=0;i<stopWords.length;i++)
-//        {
-//            after = after.replaceAll(stopWords[i], "");
-//        }
 
-//        after = after.replaceAll("[^a-zA-Z\\d\\s]+", "");
-//
-//        after = after.trim().replaceAll("[ ]{2,}", " ");
+        String after = String.join(" ", wordList);
 
+
+        after = str.replaceAll("'s", "");
+        after = after.replaceAll("_", " ");
+        after = after.replaceAll(" is", "");
+
+        after = after.replaceAll("[^a-zA-Z\\d\\s]+", "");
+       after = after.trim().replaceAll("[ ]{2,}", " ");
+        return after;
     }
 
     public static String removeKey(String in, String key) {
@@ -136,38 +137,9 @@ public class Checker {
     }
 
     public static String[] generateUnigram(String matchstr) throws IOException {
+        matchstr = matchstr.trim().replaceAll("[ ]{2,}", " ");
+
         String[] words = matchstr.split(" ");
-
-
-//        String[] stopWords=findStopWords();
-//        // convert array to LinkedList
-//        LinkedList listwords = new LinkedList(Arrays.asList(words));
-//
-//
-//        // iterate over each element in LinkedList and show what is in the list.
-//        Iterator iterator = listwords.iterator();
-//        while (iterator.hasNext()) {
-//            // Print element to console
-//            System.out.println(iterator.next());
-//
-//            for (int i=0;i<stopWords.length;i++) {
-//                if (((String) iterator.next()).contains(stopWords[i]))
-//                {
-//                    listwords.remove(stopWords[i]);
-//                }
-//            }
-//
-//        }
-//
-//
-//
-//        //ArrayList<String> list = new ArrayList<>();
-//        String[] array = new String[listwords.size()];
-//        int i = 0;
-//        for (Iterator<String> iterator2 = listwords.iterator(); iterator2.hasNext(); i++) {
-//            array[i] = iterator2.next();
-//        }
-//
 
         return words;
 
