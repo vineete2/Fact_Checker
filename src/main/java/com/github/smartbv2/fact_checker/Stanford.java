@@ -26,11 +26,12 @@ public class Stanford {
 
         AbstractSequenceClassifier<CoreLabel> classifier = CRFClassifier.getClassifier(model);
 
-        String text = "The New York Times is an American newspaper based in New York City with worldwide influence " +
-                "and readership. Founded in 1851, the paper has won 122 Pulitzer Prizes, " +
-                "more than any other newspaper. ";
+        String text = "Nobel Prize in Literature is Winston Churchill's honour";
 
         System.out.println(classifier.classifyToString(text, "tsv", true));
+
+
+
 
         // Indexing words
         int i = 0;

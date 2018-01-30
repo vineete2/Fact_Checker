@@ -5,10 +5,11 @@ package com.github.smartbv2.fact_checker;
  */
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static int[] main(String statement) throws Exception {
 
         // FOX
-        String statement = "Britney Spears is Kevin Federline's better half.";
+        // String statement = "Britney Spears is Kevin Federline's better half.";
+        System.out.println(statement);
         ConnectFOX connectFOX = new ConnectFOX();
         connectFOX.getPerson(statement);
 
@@ -22,5 +23,11 @@ public class Main {
         connectDBpedia.getJSON(trigger);
 
 
+        Checker.convertToUnigram(statement, trigger);
+        int[] words = new int[2];
+
+        words = Checker.verifyText();
+
+        return words;
     }
 }

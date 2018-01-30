@@ -30,7 +30,7 @@ public class FoxExample {
         fox.setOutputFormat(FoxParameter.OUTPUT.TURTLE);
         // fox.setOutputFormat(FoxParameter.OUTPUT.JSONLD);
 
-        fox.setInput("University of Paderborn is in Germany.");
+        fox.setInput("Golden State Warriors is Jamal Crawford's squad");
         // fox.setInput(new URL("https://en.wikipedia.org/wiki/India"));
 
         // LOG.info(fox.send());
