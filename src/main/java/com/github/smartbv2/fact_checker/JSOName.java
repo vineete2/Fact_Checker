@@ -19,11 +19,24 @@ public class JSOName {
         String generalName = "default";
 
         JSONParser parser = new JSONParser();
-
+        JSONArray graph = null;
         JSONObject obj = (JSONObject) parser.parse(new FileReader("data/outputs/output_fox.json"));
+        try {
+            // typecasting obj to JSONObject
+            graph = (JSONArray) obj.get("@graph");
+        } catch (NullPointerException e) {
+            // When there is no graph i.e., identified entity .. considering it's fact to be zero for now.
+                int[] words = {0, 1};
+                ReadInput.calculateconfidence(words);
+                System.out.println(e);
 
-        // typecasting obj to JSONObject
-        JSONArray graph = (JSONArray) obj.get("@graph");
+
+        }
+
+        if (graph==null)
+        {
+            return null;
+        }
 
         for (Object aGraph : graph) {
             JSONObject jsonObject1 = (JSONObject) aGraph;

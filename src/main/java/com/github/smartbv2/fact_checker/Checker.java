@@ -97,6 +97,8 @@ public class Checker {
 
     public static String cleanText(String str) throws IOException {
 
+
+
         // Tokenize str ( statement )
         String[] words = str.split(" ");
 

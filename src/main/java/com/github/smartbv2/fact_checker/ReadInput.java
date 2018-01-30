@@ -11,7 +11,7 @@ public class ReadInput {
 
 
         BufferedReader TSVFile =
-                new BufferedReader(new FileReader("data/train.tsv"));
+                new BufferedReader(new FileReader("data/test.tsv"));
 
 
         String dataRow0 = TSVFile.readLine(); // Read first line which has Heading --not required to send.
@@ -21,7 +21,7 @@ public class ReadInput {
 
             String[] dataArray = dataRow.split("\t");
             words = Main.main(dataArray[1]);
-            float confidence = calculateconfidence(words);
+            double confidence = calculateconfidence(words);
             // System.out.println(confidence);
 
 
@@ -52,30 +52,33 @@ public class ReadInput {
 
     }
 
-    public static float calculateconfidence(int[] words) {
+    public static double calculateconfidence(int[] words) {
 
-        float fl = (float) words[0] / words[1];
-        if (fl >= 0.5)
-            return (float)1.0;
-        else
-            return (float)0.0;
+
+
+        double fl = (double) words[0] / words[1];
+//        if (fl >= 0.5)
+//            return (float)1.0;
+//        else
+//            return (float)0.0;
+        return fl;
     }
 
-    public static void printFile(String FactID, String stmt, float confidence) throws IOException {
+    public static void printFile(String FactID, String stmt, double confidence) throws IOException {
         try {
-            String finalcsv = "data/outputs/final.tsv";
+            String finalcsv = "data/outputs/final.ttl";
             FileWriter fos = new FileWriter(finalcsv, true);
             PrintWriter dos = new PrintWriter(fos);
+//
+//            File file = new File(finalcsv);
+//            if (file.length() == 0) {
+//                dos.print("FactID\tFact_Statement\tTrue/False");
+//                dos.println();
+//            }
 
-            File file = new File(finalcsv);
-            if (file.length() == 0) {
-                dos.print("FactID\tFact_Statement\tTrue/False\t");
-                dos.println();
-            }
-
-            dos.print(FactID + "\t");
-            dos.print(stmt + "\t");
-            dos.print(confidence + "\t");
+            dos.print("<http://swc2017.aksw.org/task2/dataset/"+FactID + "> ");
+            dos.print("<http://swc2017.aksw.org/hasTruthValue> \"");
+            dos.print(confidence+"\"^^<http://www.w3.org/2001/XMLSchema#double> .");
             dos.println();
 
             dos.close();

@@ -17,6 +17,13 @@ public class Main {
         JSOName jsoName = new JSOName();
         String trigger = jsoName.getName();
 
+        if(trigger==null)
+        {
+
+            int[] words = {0,1};
+            return words;
+        }
+
         // DBpedia
         // String trigger = "Britney_Spears"; // Query for DBpedia
         ConnectDBpedia connectDBpedia = new ConnectDBpedia();
