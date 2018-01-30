@@ -20,7 +20,7 @@ public class ConnectFOX {
 
     public void getPerson(String statement) throws MalformedURLException, FileNotFoundException {
 
-        PrintStream out = new PrintStream(new FileOutputStream("output_fox.txt"));
+        PrintStream out = new PrintStream(new FileOutputStream("output_fox.json"));
         System.setOut(out);
 
         final IFoxApi fox = new FoxApi();

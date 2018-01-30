@@ -2,9 +2,9 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : [ "foxo:NamedEntityRecognition", "prov:Activity" ],
-    "endedAtTime" : "2018-01-30T07:33:30.845+01:00",
+    "endedAtTime" : "2018-01-30T12:30:17.611+01:00",
     "generated" : [ "http://ns.aksw.org/fox/demo/document-1#char0,14", "http://ns.aksw.org/fox/demo/document-1#char18,33" ],
-    "startedAtTime" : "2018-01-30T07:33:30.514+01:00",
+    "startedAtTime" : "2018-01-30T12:30:17.346+01:00",
     "used" : "foxr:org.aksw.fox.Fox"
   }, {
     "@id" : "http://ns.aksw.org/fox/demo/document-1#char0,14",
@@ -43,20 +43,6 @@
     "softwareVersion" : {
       "@id" : "http://schema.org/softwareVersion"
     },
-    "generated" : {
-      "@id" : "http://www.w3.org/ns/prov#generated",
-      "@type" : "@id"
-    },
-    "used" : {
-      "@id" : "http://www.w3.org/ns/prov#used",
-      "@type" : "@id"
-    },
-    "endedAtTime" : {
-      "@id" : "http://www.w3.org/ns/prov#endedAtTime"
-    },
-    "startedAtTime" : {
-      "@id" : "http://www.w3.org/ns/prov#startedAtTime"
-    },
     "taClassRef" : {
       "@id" : "http://www.w3.org/2005/11/its/rdf#taClassRef",
       "@type" : "@id"
@@ -79,6 +65,20 @@
     "beginIndex" : {
       "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#beginIndex",
       "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "generated" : {
+      "@id" : "http://www.w3.org/ns/prov#generated",
+      "@type" : "@id"
+    },
+    "used" : {
+      "@id" : "http://www.w3.org/ns/prov#used",
+      "@type" : "@id"
+    },
+    "endedAtTime" : {
+      "@id" : "http://www.w3.org/ns/prov#endedAtTime"
+    },
+    "startedAtTime" : {
+      "@id" : "http://www.w3.org/ns/prov#startedAtTime"
     },
     "isString" : {
       "@id" : "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#isString"
