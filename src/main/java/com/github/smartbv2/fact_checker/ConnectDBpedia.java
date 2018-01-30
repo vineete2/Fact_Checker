@@ -1,9 +1,6 @@
 package com.github.smartbv2.fact_checker;
 
-import java.io.BufferedReader;
-import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -12,7 +9,7 @@ import java.net.URLConnection;
  */
 public class ConnectDBpedia {
 
-    public static void getJSON(String trigger) throws Exception {
+    public void getJSON(String trigger) throws Exception {
 
         URL url = new URL("http://dbpedia.org/data/" + trigger + ".json");
         URLConnection urlConnection = url.openConnection();
@@ -21,13 +18,14 @@ public class ConnectDBpedia {
                         urlConnection.getInputStream()));
         String inputLine;
 
-        while ((inputLine = in.readLine()) != null)
-            System.out.println(inputLine);
-        in.close();
+        BufferedWriter out = new BufferedWriter(new FileWriter("output_dbpedia.txt"));
 
-        // Save Console output to a file
-        PrintStream out = new PrintStream(new FileOutputStream(trigger + ".txt"));
-        System.setOut(out);
+        while ((inputLine = in.readLine()) != null){
+            out.write(inputLine);
+        out.newLine(); }
+        in.close();
+        out.close();
+
     }
 
 }
