@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Fact_Checker.iml" filepath="$PROJECT_DIR$/.idea/Fact_Checker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fact-checker.iml" filepath="$PROJECT_DIR$/fact-checker.iml" />
     </modules>
   </component>
 </project>
