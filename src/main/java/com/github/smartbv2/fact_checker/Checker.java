@@ -1,12 +1,13 @@
 package com.github.smartbv2.fact_checker;
 
-import org.neo4j.kernel.api.security.AccessMode;
-
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Checker {
@@ -93,20 +94,35 @@ public class Checker {
     }
 
     public static String cleanText(String str) throws IOException {
-        String after = "";
-        String[] stopWords=findStopWords();
-        after = str.replaceAll("'s", "");
-        after = after.replaceAll("_", " ");
-        after = after.replaceAll(" is", "");
+
+        // Tokenize str ( statement )
+        String[] words = str.split(" ");
+        List<String> wordList = Arrays.asList(words);
+        String[] stopWords = findStopWords();
+        for (String word : words) {
+            for (String stopWord : stopWords) {
+
+                if (word.equals(stopWord)) {
+
+                    wordList.remove(word);
+                }
+            }
+        }
+        return String.join(", ", wordList);
+
+
+//        after = str.replaceAll("'s", "");
+//        after = after.replaceAll("_", " ");
+//        after = after.replaceAll(" is", "");
 //        for (int i=0;i<stopWords.length;i++)
 //        {
 //            after = after.replaceAll(stopWords[i], "");
 //        }
 
-        after = after.replaceAll("[^a-zA-Z\\d\\s]+", "");
+//        after = after.replaceAll("[^a-zA-Z\\d\\s]+", "");
+//
+//        after = after.trim().replaceAll("[ ]{2,}", " ");
 
-        after = after.trim().replaceAll("[ ]{2,}", " ");
-        return after;
     }
 
     public static String removeKey(String in, String key) {
