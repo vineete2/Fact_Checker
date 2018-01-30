@@ -27,5 +27,5 @@ buildNumber.properties
 .idea/libraries
 *.iml
 
-output_fox.json
-output_dbpedia.txt
+#On the fly computational files
+data/outputs/
