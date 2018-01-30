@@ -12,9 +12,9 @@ import java.util.List;
  * @author Varma G.S.
  * Sample Named Entity Extraction Program
  */
-public class Starter {
+public class Stanford {
 
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.LogManager.getLogger(Starter.class);
+    private static final org.apache.log4j.Logger logger = org.apache.log4j.LogManager.getLogger(Stanford.class);
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 

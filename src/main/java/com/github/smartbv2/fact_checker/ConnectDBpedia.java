@@ -10,12 +10,13 @@ import java.net.URLConnection;
  */
 public class ConnectDBpedia {
 
-    public static void main(String[] args) throws Exception {
-        URL db = new URL("http://dbpedia.org/data/Britney_Spears.json");
-        URLConnection yc = db.openConnection();
+    public static void getJSON(String trigger) throws Exception {
+
+        URL url = new URL("http://dbpedia.org/data/"+trigger+".json");
+        URLConnection urlConnection = url.openConnection();
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(
-                        yc.getInputStream()));
+                        urlConnection.getInputStream()));
         String inputLine;
 
         while ((inputLine = in.readLine()) != null)
