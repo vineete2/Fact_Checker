@@ -9,7 +9,6 @@ public class Main {
 
         // FOX
         // String statement = "Britney Spears is Kevin Federline's better half.";
-        System.out.println(statement);
         ConnectFOX connectFOX = new ConnectFOX();
         connectFOX.getPerson(statement);
 
@@ -17,11 +16,8 @@ public class Main {
         JSOName jsoName = new JSOName();
         String trigger = jsoName.getName();
 
-        if(trigger==null)
-        {
-
-            int[] words = {0,1};
-            return words;
+        if (trigger == null) {
+            return new int[]{0, 1};
         }
 
         // DBpedia
@@ -29,12 +25,7 @@ public class Main {
         ConnectDBpedia connectDBpedia = new ConnectDBpedia();
         connectDBpedia.getJSON(trigger);
 
-
         Checker.convertToUnigram(statement, trigger);
-        int[] words = new int[2];
-
-        words = Checker.verifyText();
-
-        return words;
+        return Checker.verifyText();
     }
 }

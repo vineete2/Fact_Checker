@@ -29,3 +29,4 @@ buildNumber.properties
 
 #On the fly computational files
 data/outputs/
+data/evaluations/

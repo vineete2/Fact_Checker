@@ -1,6 +1,9 @@
 package com.github.smartbv2.fact_checker;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -20,9 +23,10 @@ public class ConnectDBpedia {
 
         BufferedWriter out = new BufferedWriter(new FileWriter("data/outputs/output_dbpedia.txt"));
 
-        while ((inputLine = in.readLine()) != null){
+        while ((inputLine = in.readLine()) != null) {
             out.write(inputLine);
-        out.newLine(); }
+            out.newLine();
+        }
         in.close();
         out.close();
 

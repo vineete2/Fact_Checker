@@ -31,8 +31,6 @@ public class Stanford {
         System.out.println(classifier.classifyToString(text, "tsv", true));
 
 
-
-
         // Indexing words
         int i = 0;
         for (List<CoreLabel> listCL : classifier.classify(text)) {
