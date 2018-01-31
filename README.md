@@ -19,7 +19,7 @@ Build a fact-checking engine, which returns a confidence value between -1 [False
 
 #### Naive 
 + Corpus creation: New York Times 2013 Headlines
-+ Corpus analysis: FOX 
++ Corpus analysis: Stanford NER, FOX 
 
 Result: Having issues with dealing FOX tool in December 2017, gave up.
 
@@ -32,4 +32,4 @@ Inspiration from "Computational fact checking from knowledge networks" paper.
 #### Statistical NLP
 
 + Corpus creation: On the fly build up.
-+ Corpus analysis: Hits_Algo 
++ Corpus analysis: [Hits_Algo](https://github.com/SmartBV2/Fact_Checker/tree/Hits_Algo)
